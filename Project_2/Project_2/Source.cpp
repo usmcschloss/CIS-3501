@@ -2,7 +2,6 @@
 #include <fstream>
 using namespace std;
 
-
 /*
 Help from:
 https://www.youtube.com/watch?v=z0FDBGbf42Q
@@ -52,6 +51,7 @@ node* CreateNewNode(int nodeValue)
 
 // Conditions:
 //  - Must have file with inputs following the assumptions
+//  - The 1st read integer will be the root
 //This takes the numbers from the file and puts them
 //into their lexicographical positions.
 node* BuildAtree(node* currNode, int nodeValue)
@@ -76,9 +76,9 @@ node* BuildAtree(node* currNode, int nodeValue)
 //Condition: none
 // If the file is empty or only -1, this will return false
 // This will read whether the tree is binary or not
-bool IsTreeBinary(node* root, int nodeValue)
+bool IsTreeBinary(node* root)
 {
-	if (root->nodeValue != NULL || root->nodeValue != -1)
+	if (root != NULL)
 	{
 		return true;
 	}
@@ -89,7 +89,7 @@ bool IsTreeBinary(node* root, int nodeValue)
 }
 // Is binary? - complete
 
-// Conditions: Follow the assumptions
+// Conditions: Follow the assumptions  /  LNR
 // This will output the tree nodes in the In-Order Traversal
 void PrintInOrder(node* currNode, int nodeValue)
 {
@@ -105,10 +105,14 @@ void PrintInOrder(node* currNode, int nodeValue)
 			PrintInOrder(currNode->right, nodeValue);
 		}
 	}
+	else
+	{
+		cout << "n/a";
+	}
 }
 // In-Order printed
 
-// Conditions: Follow the assumptions
+// Conditions: Follow the assumptions  /  NLR
 // This will output the tree nodes in the Pre-Order Traversal
 void PrintPreOrder(node* currNode, int nodeValue)
 {
@@ -124,10 +128,14 @@ void PrintPreOrder(node* currNode, int nodeValue)
 			PrintPreOrder(currNode->right, nodeValue);
 		}
 	}
+	else
+	{
+		cout << "n/a";
+	}
 }
 // Pre-Order printed
 
-// Conditions: Follow the assumptions
+// Conditions: Follow the assumptions  /  LRN
 // This will output the tree nodes in the Post-Order Traversal
 void PrintPostOrder(node* currNode, int nodeValue)
 {
@@ -143,6 +151,10 @@ void PrintPostOrder(node* currNode, int nodeValue)
 			PrintPostOrder(currNode->right, nodeValue);
 		}
 		cout << currNode->nodeValue << " ";
+	}
+	else
+	{
+		cout << "n/a";
 	}
 }
 // Post-Order printed
@@ -171,7 +183,7 @@ int main()
 
 	
 	// This will output whether or not the tree is binary
-	if (IsTreeBinary(root, fileNode) == true)
+	if (IsTreeBinary(root) == true)
 	{
 		cout << "This is a binary tree" << endl;
 	}
