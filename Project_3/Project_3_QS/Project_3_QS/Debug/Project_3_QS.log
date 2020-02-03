@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\usmcs\OneDrive\Desktop\UofM\CIS\CIS-3501\Project_3_QS\Project_3_QS\Source.cpp(54,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\usmcs\OneDrive\Desktop\UofM\CIS\CIS-3501\Project_3_QS\Project_3_QS\Source.cpp(62,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\usmcs\OneDrive\Desktop\UofM\CIS\CIS-3501\Project_3_QS\Project_3_QS\Source.cpp(74,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Project_3_QS.vcxproj -> C:\Users\usmcs\OneDrive\Desktop\UofM\CIS\CIS-3501\Project_3_QS\Debug\Project_3_QS.exe
